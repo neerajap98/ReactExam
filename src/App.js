@@ -8,6 +8,9 @@ import Transaction from './components/Screens/Transaction';
 import Settings from './components/Screens/Settings';
 import Support from './components/Screens/Support';
 import LogOut from './components/Screens/LogOut';
+import Remaining from './components/Screens/Remaining';
+import Ongoing from './components/Screens/Ongoing';
+import Completed from './components/Screens/Completed';
 
 import Infobar from './components/includes/Infobar';
 import Navbar from './components/includes/Navbar';
@@ -22,7 +25,13 @@ function App() {
                     <Navbar />
 
                     <Routes>
-                        <Route index element = { <Dashboard /> } />
+
+                        <Route path='/' element = { <Dashboard /> } >
+                            <Route index element = { <Ongoing /> } />
+                            <Route path='remaining' element = { <Remaining /> }/>
+                            <Route path='completed' element = { <Completed /> }/>
+                        </ Route> 
+
                         <Route path='profile' element = { <Profile /> }/>
                         <Route path='statistics' element = { <Statistics />} />
                         <Route path= 'payment' element = { <Payment /> } />

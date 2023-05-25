@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function LogOut() {
-  return (
-    <div>Coming Soon...</div>
+    return (
+        <>
+            <Helmet>
+                <title>LogOut</title>
+            </Helmet>
+            <div>Coming Soon..</div>
+        </>
+            
+        
   )
 }
 

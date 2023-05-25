@@ -14,10 +14,17 @@ function Infobar() {
     const [isToggledTwo, setIsToggledTwo] = useState(false);
     const [isToggledThree, setIsToggledThree] = useState(false);
 
-    const [ selectedIds , setSelectedIds ] = useState(null);
+    const [ selectedIds , setSelectedIds ] = useState([]);
+    
 
     const handleButtonClick = (id) => {
-        setSelectedIds(id);
+        if(selectedIds.includes(id)) {
+            setSelectedIds(
+                selectedIds.filter((selectedId) => selectedId !==id)
+            );
+        } else {
+            setSelectedIds([...selectedIds,id])
+        }
       };
 
       
@@ -265,8 +272,20 @@ function Infobar() {
                         </Buyers>
                         <ListDetail>7+More</ListDetail>
                     </BuyerList>
-                    <Button>
-                            <ButtonBuy>Buy Now</ButtonBuy>
+                    <Button onClick={() => {
+                        handleButtonClick(item.id);
+                        console.log(item.id)
+                    }}
+                    >
+                        <ButtonBuy 
+                            className={selectedIds.includes(item.id)
+                                ? "active"
+                                : ""}
+                        >
+                            {selectedIds.includes(item.id)
+                            ? "Purchased"
+                            : "Buy Now"}
+                            </ButtonBuy>
                     </Button>
                 </BottomBox>
                 ))}
@@ -330,7 +349,7 @@ const CardNumber = styled.span`
 
 const Balance = styled.small`
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     color: #000;
     margin-right: 10px;
 `;
@@ -559,14 +578,15 @@ const Button = styled.div``;
 
 const ButtonBuy =styled.button`
     background: #6368ea;
+    font-size: 12px;font-weight: bold;
     color: #fff;
     padding: 8px 12px;
     border-radius: 5px;
+    &.active{
+        color: #6368ea;
+        background: #fff;
+        border:1px solid #6368ea;
+
+    }
 `;
 
-const PurchaseButton =styled.button`
-    background: #fff;
-    color: #6368ea;
-    padding: 8px 12px;
-    border-radius: 5px;
-`;
