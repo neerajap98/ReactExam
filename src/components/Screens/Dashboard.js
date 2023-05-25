@@ -1,8 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import  styled  from 'styled-components/';
+import  styled  from 'styled-components';
 import Book from '../../assets/book.svg';
-import ArrowLeft from '../../assets/leftarrow.svg'
+import ArrowLeft from '../../assets/leftarrow.svg';
+import { NavLink,Outlet } from 'react-router-dom';
 
 function Dashboard() {
     return (
@@ -34,6 +35,39 @@ function Dashboard() {
                         />
                     </ArrowContainer>
                 </TopContainer>
+
+                <BottomContainer>
+                    
+                    <ListBar>
+                        <ListContainer>
+                            <ListItem className='new'>
+                                <NavLink
+                                    className={({ isActive}) => 
+                                    isActive ? "active" : ""
+                                    }
+                                to="remaining/">Remaining</NavLink>
+                            </ListItem>
+                            <ListItem className='new'>
+                                <NavLink
+                                    className={({ isActive}) => 
+                                    isActive ? "active" : ""
+                                    }
+                                to="ongoing/">Ongoing</NavLink>
+                            </ListItem>
+                            <ListItem className='new'>
+                                <NavLink
+                                    className={({ isActive}) => 
+                                    isActive ? "active" : ""
+                                    }
+                                to="completed/">Completed</NavLink>
+                            </ListItem>
+                        </ListContainer>
+                    </ListBar>
+
+                    <Outlet /> 
+
+                </BottomContainer>
+
             </MainContainer>
         </>
         
@@ -53,6 +87,7 @@ const TopContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 10px;
 `;
 
 const HeadContainer = styled.div`
@@ -62,10 +97,10 @@ const HeadContainer = styled.div`
 `;
 
 const Heading = styled.h1`
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
     color: #000;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 `;
 
 const SubContainer = styled.div`
@@ -75,7 +110,7 @@ const SubContainer = styled.div`
 `;
 
 const SubHeading = styled.h3`
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
     color: #bababc;
     margin-right: 12px;
@@ -104,3 +139,26 @@ const ArrowContainer = styled.div`
 const LeftArrow = styled.img`
     display: block;
 `;
+
+const BottomContainer = styled.div`
+    height: calc(100vh - 140px);
+    background: #f6f7fb;
+    padding: 20px 30px;
+`;
+
+const ListBar = styled.div`
+    width: 35%;
+    
+`;
+
+const ListContainer = styled.ul`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const ListItem = styled.li`
+    
+`;
+
+// const BottomContainer = styled.div``;

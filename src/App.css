@@ -114,3 +114,15 @@ li a.active img {
 	filter: none;
 	
 }
+
+li.new a {
+	font-size: 12px;
+	color: #000;
+}
+
+li.new a.active {
+	font-size: 12px;
+	color: #7974B3;
+	border-bottom:1px solid #7974B3;
+	padding-bottom: 5px;
+}

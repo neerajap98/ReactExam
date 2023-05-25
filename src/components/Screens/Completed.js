@@ -6,4 +6,4 @@ function Completed() {
   )
 }
 
-export default Completed
+export default Completed;

@@ -27,9 +27,10 @@ function App() {
                     <Routes>
 
                         <Route path='/' element = { <Dashboard /> } >
-                            <Route index element = { <Ongoing /> } />
-                            <Route path='remaining' element = { <Remaining /> }/>
-                            <Route path='completed' element = { <Completed /> }/>
+                            <Route index element = { <Ongoing />  } />
+                             <Route path='ongoing/' element = { <Ongoing /> } /> 
+                            <Route path='remaining/' element = { <Remaining /> }/>
+                            <Route path='completed/' element = { <Completed /> }/>
                         </ Route> 
 
                         <Route path='profile' element = { <Profile /> }/>
