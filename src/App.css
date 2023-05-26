@@ -118,6 +118,7 @@ li a.active img {
 li.new a {
 	font-size: 12px;
 	color: #000;
+	padding-bottom: 2px;
 }
 
 li.new a.active {
@@ -125,4 +126,5 @@ li.new a.active {
 	color: #7974B3;
 	border-bottom:1px solid #7974B3;
 	padding-bottom: 5px;
+	transition:all .2s ease-in-out ;
 }

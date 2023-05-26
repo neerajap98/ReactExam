@@ -306,7 +306,7 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     padding: 0 10px;
 `;
 
@@ -368,7 +368,7 @@ const LectureContainer =styled.div`
 const Headline =styled.h2`
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #000;
 `;
 
