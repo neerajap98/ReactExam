@@ -141,7 +141,7 @@ const LeftArrow = styled.img`
 `;
 
 const BottomContainer = styled.div`
-    height: calc(100vh - 140px);
+    height: calc(780px - 140px);
     background: #f6f7fb;
     padding: 20px 30px;
 `;
@@ -161,4 +161,3 @@ const ListItem = styled.li`
     
 `;
 
-// const BottomContainer = styled.div``;

@@ -3,7 +3,11 @@ import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import UpArrow from '../../assets/arrowup.svg';
 import DownArrow from '../../assets/downarrow.svg';
-import Right from '../../assets/right.svg'
+import Right from '../../assets/right.svg';
+import White from '../../assets/white.svg';
+import Block from '../../assets/block.svg';
+import Clock from '../../assets/clock.svg';
+
 
 function Ongoing() {
   return (
@@ -140,6 +144,7 @@ function Ongoing() {
                 </BaseContainer>
             </DerivationContainer>
         </TopContainer>
+
         <DateContainer>
             <Day>Monday</Day>
             <Date>31 Aug</Date>
@@ -156,10 +161,11 @@ function Ongoing() {
                 />
             </ArrowDiv>
         </DateContainer>
+
         <SubContainer>
             <LeftContainer>
                 <Time>
-                    <TimeSchedules>08.00</TimeSchedules>
+                    <TimeSchedules>08:00</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
                     <TimeSchedules className='bar'>
                         <Circle></Circle>
@@ -170,13 +176,13 @@ function Ongoing() {
                         </Horizontal>
                     </TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
-                    <TimeSchedules>08.00</TimeSchedules>
+                    <TimeSchedules>08:00</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
                     <TimeSchedules>--</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
-                    <TimeSchedules>08.00</TimeSchedules>
+                    <TimeSchedules>08:00</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
-                    <TimeSchedules>08.00</TimeSchedules>
+                    <TimeSchedules>08:00</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
                     <TimeSchedules>--</TimeSchedules>
                     <TimeSchedules>-</TimeSchedules>
@@ -185,31 +191,106 @@ function Ongoing() {
                 </Time>
             </LeftContainer>
             <RightContainer>
-                <LeftDiv></LeftDiv>
-                <ImgContainer>
-                    <ImgTag 
-                        src = {require('../../assets/graphbar.png')}
-                        alt = 'graph'
-                        width='150px'
-                    />
-                </ImgContainer>
-                <BusinessContainer>
-                    <TimePer>08.00 - 09.30</TimePer>
-                    <Sub>Business</Sub>
-                    <Detail>Bring A Business Mind To Design,Transform Your Career</Detail>
-                </BusinessContainer>
-                <RightDiv>
-                    <Percent>75</Percent>
-                    <RightArrow>
-                        <RightArrowImg 
-                            src = {Right}
-                            alt = 'right'
-                            width = '15px'
+                <TopDiv>
+                    <LeftDiv></LeftDiv>
+                        <ImgContainer>
+                            <ImgTag 
+                                src = {require('../../assets/graphbar.png')}
+                                alt = 'graph'
+                                width='150px'
                         />
-                    </RightArrow>
-                </RightDiv>
+                    </ImgContainer>
+                    <BusinessContainer>
+                        <TimePer>08:00 - 09:30</TimePer>
+                        <Sub>Business</Sub>
+                        <Detail>Bring A Business Mind To Design,Transform Your Career</Detail>
+                    </BusinessContainer>
+                    <RightDiv>
+                        <Percent>75</Percent>
+                        <RightArrow>
+                            <RightArrowImg 
+                                src = {Right}
+                                alt = 'right'
+                                width = '15px'
+                            />
+                        </RightArrow>
+                    </RightDiv>
+                </TopDiv>
+
+                <MeetingContainer>
+                    <ClockDiv>
+                        <ClockImg 
+                            src= {Clock}
+                            alt='clock'
+                            width={'20px'}
+                        />
+                        <MeetTime>08:00 - 09:30</MeetTime>
+                    </ClockDiv>
+                    <MeetTitle>Project Team Meeting</MeetTitle>
+                    <BlockImg>
+                        <ImageBlock 
+                            src = {Block}
+                            alt = 'block'
+                            width ='20px'
+                        />
+                    </BlockImg>
+                </MeetingContainer>
+
+                <TopDiv className='bg'>
+                    <LeftDiv className='white'></LeftDiv>
+                        <ImgContainer>
+                            <ImgTag 
+                                src = {require('../../assets/laptop.png')}
+                                alt = 'graph'
+                                width='120px'
+                        />
+                    </ImgContainer>
+                    <BusinessContainer>
+                        <TimePer className='white'>08:00 - 09:30</TimePer>
+                        <Sub className='white'>The Design Presentation Process For Newbies</Sub>
+                        <Detail className='white'>Bring A Business Mind To Design,Transform Your Career</Detail>
+                    </BusinessContainer>
+                    <RightDiv>
+                        <Percent>65</Percent>
+                        <RightArrow>
+                            <RightArrowImg 
+                                src = {White}
+                                alt = 'right'
+                                width = '15px'
+                            />
+                        </RightArrow>
+                    </RightDiv>
+                </TopDiv>
+
+                <TopDiv className='bg'>
+                    <LeftDiv className='white'></LeftDiv>
+                        <ImgContainer>
+                            <ImgTag 
+                                src = {require('../../assets/laptop.png')}
+                                alt = 'graph'
+                                width='120px'
+                        />
+                    </ImgContainer>
+                    <BusinessContainer>
+                        <TimePer className='white'>08:00 - 09:30</TimePer>
+                        <Sub className='white'>The Design Presentation Process For Newbies</Sub>
+                        <Detail className='white'>Bring A Business Mind To Design,Transform Your Career</Detail>
+                    </BusinessContainer>
+                    <RightDiv>
+                        <Percent>65</Percent>
+                        <RightArrow>
+                            <RightArrowImg 
+                                src = {White}
+                                alt = 'right'
+                                width = '15px'
+                            />
+                        </RightArrow>
+                    </RightDiv>
+                </TopDiv>
             </RightContainer>
         </SubContainer>
+
+        
     </MainContainer>
 
     </>
@@ -393,7 +474,7 @@ const SubContainer = styled.div`
 const LeftContainer = styled.div`
     background: #f6f7fb;
     width: 80px;
-    height: 620px;
+    height: 565px;
     padding: 5px;
     margin-right: 15px;
 
@@ -441,7 +522,7 @@ const Medium = styled.div`
     width: 60px;
     height: 1px;
     background: #6366e7;
-    /* border-radius: 15px; */
+    
 `;
 
 const Dark = styled.div`
@@ -452,13 +533,22 @@ const Dark = styled.div`
 `;
 
 const RightContainer = styled.div`
-    width: 90%;
+    display: flex;
+    flex-direction: column;
+`;
+
+const TopDiv = styled.div`
+    width: 100%;
     background: #f1eeff;
     height: 150px;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
     padding: 15px;
+    margin-bottom: 10px;
+    &.bg {
+        background: #6368ea;
+    }
 `;
 
 const LeftDiv = styled.div`
@@ -466,7 +556,9 @@ const LeftDiv = styled.div`
     height: 98%;
     background: #6368ea;
     border-radius: 20px;
-    
+    &.white {
+        background: #fff;
+    }
 `;
 
 const ImgContainer = styled.div`
@@ -490,6 +582,9 @@ const TimePer = styled.small`
     font-size: 12px;
     font-weight: 500;
     color: #6467ea;
+    &.white {
+        color: #fff;
+    }
 `;
 
 const Sub = styled.h3`
@@ -497,13 +592,19 @@ const Sub = styled.h3`
     color: #6467ea;
     font-weight: bold;
     margin: 10px 0;
-    
+    &.white {
+        color: #fff;
+        line-height: 1.3em;
+    }
 `;
 
 const Detail = styled.p`
     font-size: 12px;
     font-weight: 500;
     color: #6467ea;
+    &.white {
+        color: #fff;
+    }
 `;
 
 const RightDiv = styled.div`
@@ -534,6 +635,47 @@ const RightArrow = styled.div`
 const RightArrowImg = styled.img`
     display: block;
 `;
+
+const MeetingContainer = styled.div`
+    width: 100%;
+    background: #edf6ff;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+`;
+
+const ClockDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const ClockImg = styled.img`
+    margin-right: 15px;
+`;
+
+const MeetTime = styled.small`
+    font-size: 12px;
+    font-weight: bold;
+    color:#2f4fc0;
+`;
+
+const MeetTitle = styled.h3`
+    font-size: 12px;
+    font-weight: bold;
+    color: #2f4fc0;
+`;
+
+const BlockImg = styled.div``;
+
+const ImageBlock = styled.img`
+    display: block;
+`;
+
 
 
 
