@@ -7,10 +7,18 @@ import Right from '../../assets/right.svg';
 import White from '../../assets/white.svg';
 import Block from '../../assets/block.svg';
 import Clock from '../../assets/clock.svg';
+// import Swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 
 function Ongoing() {
-
+    const alert = () => {
+        swal({
+            title: "Heyy!",
+            text: "You are Back on Track!",
+            icon: "success"
+        })
+    }
     
   return (
     <>
@@ -56,7 +64,7 @@ function Ongoing() {
                             </ListItem>
                         </StudList>
                     </StudContainer>
-                    <PlayButton>
+                    <PlayButton  onClick={alert}>
                         <PlayIcon></PlayIcon>
                     </PlayButton>
                 </BaseContainer>
@@ -98,8 +106,8 @@ function Ongoing() {
                             </ListItem>
                         </StudList>
                     </StudContainer>
-                    <PlayButton className='blue'>
-                        <PlayIcon></PlayIcon>
+                    <PlayButton className='blue' onClick={alert}>
+                        <PlayIcon ></PlayIcon>
                     </PlayButton>
                 </BaseContainer>
             </DerivationContainer>
@@ -140,8 +148,8 @@ function Ongoing() {
                             </ListItem>
                         </StudList>
                     </StudContainer>
-                    <PlayButton className='royal'>
-                        <PlayIcon></PlayIcon>
+                    <PlayButton className='royal' onClick={alert}>
+                        <PlayIcon ></PlayIcon>
                     </PlayButton>
                 </BaseContainer>
             </DerivationContainer>
