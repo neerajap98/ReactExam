@@ -428,6 +428,10 @@ const PlayButton = styled.div`
     background-color: #8dadff; 
     border-radius: 8px;
     position: relative;
+    @media all and (max-width:640px) {
+        width: 45px;
+        height: 45px;
+    }
     cursor: pointer;
     &.blue {
         background-color: #8cf9fc; 

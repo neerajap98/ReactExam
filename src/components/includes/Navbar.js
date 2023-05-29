@@ -10,7 +10,7 @@ import Settings from '../../assets/settingsactive.svg';
 import Support from '../../assets/supportactive.svg';
 import Logout from '../../assets/logoutactive.svg';
 import File from '../../assets/file.svg'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Navbar() {
     return (
@@ -137,6 +137,113 @@ function Navbar() {
                 <Storage>Buy More Storage</Storage>
                 <BuyButton>Buy Now</BuyButton>
             </StorageContainer>
+
+            <Link>
+                <HamImg />
+            </Link>
+
+            <ItemContainer className='mobile-menu'>
+                <Items>
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="profile">
+                        <ItemImage src= {Profile1} 
+                            alt='profile' 
+                            width='20px' />
+                        Profile
+                    </NavLink>
+                </Items> 
+                <Items> 
+                    <NavLink 
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="/">
+                        <ItemImage src= {Dashboard1} 
+                            alt='profile' 
+                            width='20px' />
+                        Dashboard
+                    </NavLink>
+                </Items>  
+                <Items> 
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="statistics">
+                        <ItemImage src= {Statistics} 
+                            alt='profile' 
+                            width='20px' />
+                        Statistics
+                    </NavLink>
+                </Items>
+                <Items>
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="payment">
+                        <ItemImage src= {Payment} 
+                            alt='profile' 
+                            width='20px' />
+                        Payment
+                    </NavLink>
+                </Items> 
+                <Items>
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="transaction">
+                        <ItemImage src= {Transaction} 
+                            alt='profile' 
+                            width='20px' />
+                       Transaction
+                    </NavLink>
+                </Items> 
+                <Items>
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="settings">
+                        <ItemImage src= {Settings} 
+                            alt='profile' 
+                            width='20px' />
+                        Settings
+                    </NavLink>
+                </Items> 
+                <Items> 
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="support">
+                        <ItemImage src= {Support} 
+                            alt='profile' 
+                            width='20px' />
+                        Support
+                    </NavLink>
+                </Items>
+                <Items> 
+                    <NavLink
+                        className={({ isActive}) => 
+                        isActive ? "active" : ""
+                    }
+                        to="logout"
+                        >
+                        <ItemImage src= {Logout} 
+                            alt='profile' 
+                            width='20px' />
+                        Logout
+                    </NavLink>
+                </Items>
+            </ItemContainer>
+            <Close>
+                <Icon />
+            </Close>
         </MainContainer>           
     )
 }
