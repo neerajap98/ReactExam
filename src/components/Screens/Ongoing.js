@@ -327,6 +327,11 @@ const UxContainer = styled.div`
     background: #6e60e7;
     padding:5px 15px;
 
+    @media all and (max-width:980px) {
+        height: 210px;
+        padding: 4px 12px;
+    }
+
 `;
 
 const ImageContainer = styled.div`
@@ -350,12 +355,16 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
     display: block;
+    @media all and (max-width:980px) {
+        width: 30px;
+    }
 `;
 
 const Title = styled.h3`
     font-size: 16px;
     color: #fff;
     margin-left: 2px;
+    
 `;
 
 const Classes = styled.span`
@@ -374,11 +383,20 @@ const BaseContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+    @media all and (max-width:980px) {
+        margin-top: 20px;
+    }
     &.blue {
         margin-top: 25px;
+        @media all and (max-width:980px) {
+            margin-top: 15px; 
+        }
     }
     &.royal {
         margin-top: 25px;
+        @media all and (max-width:980px) {
+            margin-top: 15px;
+        }
     }
 `;
 
@@ -439,6 +457,14 @@ const DerivationContainer = styled.div`
     padding:5px 15px;
     &.bg {
         background: #63b0e8;
+        @media all and (max-width:980px) {
+            height: 200px;
+            padding: 4px 12px;
+        }
+    }
+        @media all and (max-width:1180px) {
+            height: 200px;
+            padding: 4px 12px;
     }
 `;
 
@@ -479,6 +505,13 @@ const BottomArrow = styled.img`
 const SubContainer = styled.div`
     padding: 0 40px;
     display: flex;
+    @media all and (max-width:980px) {
+        padding: 0 20px;
+    }
+    @media all and (max-width:768px) {
+        padding: 0 40px;
+        justify-content: space-between;
+    }
 `;
 
 const LeftContainer = styled.div`
@@ -487,7 +520,9 @@ const LeftContainer = styled.div`
     height: 565px;
     padding: 5px;
     margin-right: 15px;
-
+    @media all and (max-width:1180px) {
+        margin-right: 10px;
+    }
 `;
 
 const Time = styled.ul``;
@@ -545,6 +580,9 @@ const Dark = styled.div`
 const RightContainer = styled.div`
     display: flex;
     flex-direction: column;
+    @media all and (max-width:768px) {
+        width: 85%;
+    }
 `;
 
 const TopDiv = styled.div`
@@ -559,6 +597,13 @@ const TopDiv = styled.div`
     &.bg {
         background: #6368ea;
     }
+    @media all and (max-width:1180px) {
+        padding: 25px;
+    }
+    @media all and (max-width:768px) {
+        padding: 15px;
+    }
+    
 `;
 
 const LeftDiv = styled.div`
@@ -580,18 +625,32 @@ const ImgContainer = styled.div`
 
 const ImgTag = styled.img`
     display: block;
-    
+    @media all and (max-width:980px) {
+        width: 80px;
+    }
+    @media all and (max-width:768px) {
+        width: 110px;
+    }
 `;
 
 const BusinessContainer = styled.div`
     width: 50%;
     margin: auto 0;
+    @media all and (max-width:768px) {
+        
+    }
 `;
 
 const TimePer = styled.small`
     font-size: 12px;
     font-weight: 500;
     color: #6467ea;
+    @media all and (max-width:980px) {
+        font-size: 10px;
+    }
+    @media all and (max-width:768px) {
+        font-size: 12px;
+    }
     &.white {
         color: #fff;
     }
@@ -602,6 +661,12 @@ const Sub = styled.h3`
     color: #6467ea;
     font-weight: bold;
     margin: 10px 0;
+    @media all and (max-width:980px) {
+        font-size: 13px;
+    }
+    @media all and (max-width:980px) {
+        font-size: 16px;
+    }
     &.white {
         color: #fff;
         line-height: 1.3em;
@@ -612,6 +677,12 @@ const Detail = styled.p`
     font-size: 12px;
     font-weight: 500;
     color: #6467ea;
+    @media all and (max-width:980px) {
+        font-size: 11px;
+    }
+    @media all and (max-width:980px) {
+        font-size: 12px;
+    }
     &.white {
         color: #fff;
     }
@@ -622,6 +693,7 @@ const RightDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 `;
 
 const Percent = styled.h6`
@@ -635,11 +707,16 @@ const Percent = styled.h6`
     justify-content: center;
     background: linear-gradient(#fff,#fff) padding-box, linear-gradient(to left, #4363de, #fff) border-box;
     border: 3px solid transparent;
+    @media all and (max-width:980px) {
+        font-size: 14px;
+        padding: 12px 20px;
+        
+    }
 `;
 
 const RightArrow = styled.div`
     margin: 0 0 20px 20px;
-
+    
 `;
 
 const RightArrowImg = styled.img`

@@ -78,6 +78,9 @@ export default Dashboard;
 
 const MainContainer = styled.div`
     background: #fff;
+    @media all and (max-width:768px) {
+        width: 100%;
+    }
 `;
 
 const TopContainer = styled.div`
@@ -88,6 +91,7 @@ const TopContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4px;
+   
 `;
 
 const HeadContainer = styled.div`
@@ -144,6 +148,11 @@ const BottomContainer = styled.div`
     height: calc(780px - 140px);
     background: #f6f7fb;
     padding: 20px 30px;
+    @media all and (max-width:1180px) {
+        padding: 20px 15px;
+        height: auto;
+    }
+   
 `;
 
 const ListBar = styled.div`
@@ -158,6 +167,6 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-    
+    margin-right: 10px;
 `;
 

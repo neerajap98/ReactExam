@@ -146,19 +146,29 @@ export default Navbar;
 const MainContainer = styled.div`
     padding: 50px 20px;
     text-align: center;
-
+    @media all and (max-width:768px) {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 `;
 
 const ProfileContainer = styled.div`
     width: 75px;
     margin: 0 auto;
     margin-bottom: 15px;
+    @media all and (max-width:768px) {
+        margin: 0;
+    }
 `;
 
 const Profile = styled.img`
     width: 100%;
     display: block;
     border-radius: 50%;
+    margin-left: 20px;
 `;
 
 const NameContainer = styled.div`
@@ -170,14 +180,18 @@ const PersonName = styled.h6`
     font-weight: 700;
     color: #000;
     margin-bottom: 5px;
-
+    @media all and (max-width:768px) {
+        margin-left: -150px;
+    }
 `;
 
 const Qualification = styled.span`
     font-size: 12px;
     font-weight: bold;
     color: #c3c3c3;
-    
+    @media all and (max-width:768px) {
+        display: none;
+    }
 `;
 
 const ButtonContainer = styled.div`
@@ -191,14 +205,26 @@ const ButtonContainer = styled.div`
     justify-content: center;
     border-radius: 5px;
     margin-bottom: 30px;
+    @media all and (max-width:980px) {
+        width: 95%;
+    }
+    @media all and (max-width:768px) {
+       display: none;
+    }
 `;
 const HorseImage = styled.img`
-    display: block;
+    display: inline-block;
     margin-right: 5px;
+    @media all and (max-width:980px) {
+        margin-right: 3px;
+    }
 `;
 const ButtonTitle = styled.small`
     color: #fff;
     font-size: 12px;
+    @media all and (max-width:980px) {
+        font-size: 10px;
+    }
 `;
 
 const ItemContainer = styled.ul`
@@ -206,19 +232,30 @@ const ItemContainer = styled.ul`
     flex-direction: column;
     margin-left: 10px;
     margin-bottom: 10px;
+    @media all and (max-width:768px) {
+       display: flex;
+       flex-direction: row;
+       margin-bottom: 0;
+       align-items: center;
+       justify-content: space-between;
+    }
 `;
 
 const Items = styled.li`
     display: flex;
     flex-direction: column;
-   
+    @media all and (max-width:768px) {
+       display: flex;
+       flex-direction: row;
+    }
 `;
-
 
 const ItemImage = styled.img`
     display: block;
     margin-right: 20px;
-    
+    @media all and (max-width:768px) {
+        margin-right: 10;
+    }
 `;
 
 const StorageContainer = styled.div`
@@ -228,12 +265,23 @@ const StorageContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 15px 10px;
+    @media all and (max-width:980px) {
+        width: 120px;
+        height: 120px;
+    } 
+    @media all and (max-width:768px) {
+       display: none;
+    }  
+
 `;
 
 const FolderImage = styled.img`
     display: block;
     margin: 0 auto;
     margin-bottom: 10px;
+    @media all and (max-width:980px) {
+        width: 30px;
+    }  
 `;
 
 const Storage = styled.span`
@@ -241,6 +289,9 @@ const Storage = styled.span`
     font-weight: bold;
     margin-bottom: 10px;
     color: #000;
+    @media all and (max-width:980px) {
+        font-size: 10px;
+    }  
 `;
 
 const BuyButton = styled.button`
@@ -251,4 +302,7 @@ const BuyButton = styled.button`
     margin: 0 auto;
     color: #fff;
     border-radius: 5px;
+    @media all and (max-width:980px) {
+        font-size: 11px;
+    } 
 `;

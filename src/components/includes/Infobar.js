@@ -81,15 +81,15 @@ function Infobar() {
                 <Headline>Today's Lectures</Headline>
                 <ItemContainer>
                     <BookContainer>
-                        <IconContainerviolet><BookIcon 
+                        <IconContainer className='violet'><BookIcon 
                             src= {require('../../assets/books.png')}
                             alt='books'
                             width= '40px'
-                        /></IconContainerviolet>
+                        /></IconContainer >
                     </BookContainer>
                     <SubjectContainer>
                         <Subject>Maths</Subject>
-                        <StatusV>Running...</StatusV>
+                        <Status className='vio'>Running...</Status>
                     </SubjectContainer>
                         <StatusBar>
                             <Completed></Completed>
@@ -103,13 +103,13 @@ function Infobar() {
                 </ItemContainer>
                 <ItemContainer>
                     <BookContainer>
-                        <IconContainerBlue>
+                        <IconContainer className='blue'>
                             <HistoIcon 
                             src= {require('../../assets/histo.png')}
                             alt='histo'
                             width= '40px'
                         />
-                        </IconContainerBlue>
+                        </IconContainer>
                     </BookContainer>
                     <SubjectContainer>
                         <Subject>History</Subject>
@@ -300,6 +300,13 @@ export default Infobar;
 const MainContainer = styled.div`
     background: #fff;
     padding: 30px 20px;
+    @media all and (max-width:980px) {
+        padding: 20px 10px;
+    }
+    @media all and (max-width:768px) {
+        width: 100%;
+        padding: 50px 30px;
+    }
 `;
 
 const TopBar = styled.div`
@@ -401,6 +408,9 @@ const SubjectContainer =styled.div`
     flex-direction: column;
     justify-content: flex-start;
     margin-right: 10px;
+    @media all and (max-width:768px) {
+        margin-left: -50px;
+    }
 `;
 
 const Subject =styled.span`
@@ -410,16 +420,13 @@ const Subject =styled.span`
     margin-bottom: 5px;
 `;
 
-const StatusV =styled.small`
-    font-size: 10px;
-    font-weight: bold;
-    color: #6368ea;
-`;
-
 const Status =styled.small`
     font-size: 10px;
     font-weight: bold;
     color: #3ecd7b;
+    &.vio {
+        color: #6368ea;
+    }
 `;
 
 const StatusBar =styled.div`
@@ -462,28 +469,12 @@ const IconContainer =styled.div`
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-`;
-
-const IconContainerBlue =styled.div`
-    width: 55px;
-    height:45px;
-    border-radius: 8px;
-    background: #62d0e9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-`;
-
-const IconContainerviolet =styled.div`
-    width: 55px;
-    height:45px;
-    border-radius: 8px;
-    background: #6368ea;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
+    &.blue {
+        background: #62d0e9;
+    }
+    &.violet {
+        background: #6368ea;
+    }
 `;
 
 const ToggleContainer =styled.div``;
@@ -494,7 +485,7 @@ const ClassContainer =styled.div`
 
 const Classmates =styled.div`
     display: flex;
-    justify-content: space between;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 `;
@@ -505,6 +496,10 @@ const StudentImage =styled.div`
     align-items: center;
     margin-right: 30px;
     width: 40%;
+    @media all and (max-width:980px) {
+        width: 50%;
+    }
+
 `;
 
 const Image =styled.img`
@@ -516,7 +511,9 @@ const StudentName =styled.h5`
     font-size: 12px;
     font-weight: bold;
     color: #000;
-
+    @media all and (max-width:980px) {
+        font-size: 10px;
+    }
 `;
 
 const StudentCredit =styled.small`
@@ -528,6 +525,9 @@ const StudentCredit =styled.small`
 const StudentDob =styled.small`
     color: #000;
     font-size: 12px;
+    @media all and (max-width:980px) {
+        display: none;
+    }
 `;
 
 const BottomContainer =styled.div`
