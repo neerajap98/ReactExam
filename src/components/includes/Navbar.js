@@ -138,11 +138,15 @@ function Navbar() {
                 <BuyButton>Buy Now</BuyButton>
             </StorageContainer>
 
-            <Link>
-                <HamImg />
+            <Link  className='menu-icon'>
+                <HamImg 
+                    src= {require('../../assets/hamburger.png')}
+                    alt='ham'
+                    width={'30px'}
+                />
             </Link>
 
-            <ItemContainer className='mobile-menu'>
+            {/* <ItemContainer className='mobile-menu'>
                 <Items>
                     <NavLink
                         className={({ isActive}) => 
@@ -240,10 +244,8 @@ function Navbar() {
                         Logout
                     </NavLink>
                 </Items>
-            </ItemContainer>
-            <Close>
-                <Icon />
-            </Close>
+            </ItemContainer> */}
+            
         </MainContainer>           
     )
 }
@@ -254,11 +256,20 @@ const MainContainer = styled.div`
     padding: 50px 20px;
     text-align: center;
     @media all and (max-width:768px) {
-        width: 100%;
-        height: 120px;
+        width: 100px;
+        height: 100vh;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
+    }
+    @media all and (max-width:680px) {
+        width: 100%;
+        height: 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
     }
 `;
 
@@ -267,7 +278,13 @@ const ProfileContainer = styled.div`
     margin: 0 auto;
     margin-bottom: 15px;
     @media all and (max-width:768px) {
-        margin: 0;
+        margin-left: -20px;
+        width: 70px;
+    }
+    @media all and (max-width:768px) {
+        margin-left: -20px;
+        width: 70px;
+        margin-top: -30px;
     }
 `;
 
@@ -279,7 +296,14 @@ const Profile = styled.img`
 `;
 
 const NameContainer = styled.div`
-
+    @media all and (max-width:768px) {
+        margin-left:30px;
+        margin-top: -320px;
+        width: 100%;
+        display: none;
+    }
+    
+    
 `;
 
 const PersonName = styled.h6`
@@ -287,12 +311,7 @@ const PersonName = styled.h6`
     font-weight: 700;
     color: #000;
     margin-bottom: 5px;
-    @media all and (max-width:768px) {
-        margin-left: -150px;
-    }
-    @media all and (max-width:640px) {
-        margin-left: -10px;
-    }
+    
 `;
 
 const Qualification = styled.span`
@@ -342,12 +361,34 @@ const ItemContainer = styled.ul`
     flex-direction: column;
     margin-left: 10px;
     margin-bottom: 10px;
+    
+    &.mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        background: #fff;
+        padding: 30px;
+        z-index: 2;
+        bottom: 0;
+        width: 280px;
+        padding-top: 40px;
+        transition: all 0.4s ease-in;
+    }
     @media all and (max-width:768px) {
        display: flex;
-       flex-direction: row;
-       margin-bottom: 0;
+       flex-direction: column;
        align-items: center;
        justify-content: space-between;
+       height: 70%;
+       margin-top: -200px;
+    }
+    @media all and (max-width:640px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -15px ;
+        margin-left: 300px;
     }
 `;
 
@@ -356,7 +397,8 @@ const Items = styled.li`
     flex-direction: column;
     @media all and (max-width:768px) {
        display: flex;
-       flex-direction: row;
+       flex-direction: column;
+       margin-top: -50px;
     }
 `;
 
@@ -415,4 +457,8 @@ const BuyButton = styled.button`
     @media all and (max-width:980px) {
         font-size: 11px;
     } 
+`;
+
+const HamImg = styled.img`
+    width: 100%;
 `;

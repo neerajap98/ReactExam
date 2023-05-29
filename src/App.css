@@ -129,9 +129,16 @@ li.new a.active {
 	transition:all .2s ease-in-out ;
 }
 
+a.menu-icon {
+	display: none;
+    width: 35px;
+}
+
+
 @media all and (max-width:980px) {
 	.gridContainer {
 		display: flex;
+		justify-content: space-between;
 	}
 }
 

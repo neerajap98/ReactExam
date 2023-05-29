@@ -317,6 +317,10 @@ const TopBar = styled.div`
     align-items: center;
     margin-bottom: 30px;
     padding: 0 10px;
+    @media all and (max-width:980px) {
+        width: 100%;  
+        margin-right: 25px;  
+        }
     @media all and (max-width:768px) {
         width: 100%;    
         }
@@ -489,14 +493,13 @@ const ToggleContainer =styled.div``;
 const ClassContainer =styled.div`
     border-bottom: 1px solid #c3c3c3;
     @media all and (max-width:768px) {
-        width: 50%;
+        width: 100%;
         border-bottom: none;
-        margin-left: 35px;
-        border-right: 1px solid #c3c3c3;
-        padding-right:15px;
+        margin:0 auto;
+        
     }
     @media all and (max-width:640px) {
-        margin-left: 25px;
+        margin-left: 5px;
     }
 `;
 
@@ -560,11 +563,7 @@ const StudentDob =styled.small`
 const BottomContainer =styled.div`
     padding: 30px 20px;
     @media all and (max-width:768px) {
-        width: 45%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 60px;
+        display: none;
     }
 `;
 

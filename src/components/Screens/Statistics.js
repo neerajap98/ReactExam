@@ -30,6 +30,13 @@ const StatisticsDiv = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 150px;
+  @media all and (max-width:768px) {
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 120px);
+    margin: auto;
+
+  }
 `;
 
 const Image = styled.img`

@@ -79,6 +79,9 @@ export default Dashboard;
 const MainContainer = styled.div`
     background: #fff;
     @media all and (max-width:768px) {
+        width: 85%;
+    }
+    @media all and (max-width:640px) {
         width: 100%;
     }
 `;
