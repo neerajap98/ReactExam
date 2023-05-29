@@ -495,6 +495,9 @@ const ClassContainer =styled.div`
         border-right: 1px solid #c3c3c3;
         padding-right:15px;
     }
+    @media all and (max-width:640px) {
+        margin-left: 25px;
+    }
 `;
 
 const Classmates =styled.div`
@@ -504,7 +507,6 @@ const Classmates =styled.div`
     margin-bottom: 10px;
     @media all and (max-width:768px) {
         width: 100%;
-        
     }
 `;
 

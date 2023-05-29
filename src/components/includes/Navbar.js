@@ -183,6 +183,9 @@ const PersonName = styled.h6`
     @media all and (max-width:768px) {
         margin-left: -150px;
     }
+    @media all and (max-width:640px) {
+        margin-left: -10px;
+    }
 `;
 
 const Qualification = styled.span`
