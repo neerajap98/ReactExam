@@ -306,6 +306,8 @@ const MainContainer = styled.div`
     @media all and (max-width:768px) {
         width: 100%;
         padding: 50px 30px;
+        flex-wrap: wrap;
+        display: flex;
     }
 `;
 
@@ -315,6 +317,9 @@ const TopBar = styled.div`
     align-items: center;
     margin-bottom: 30px;
     padding: 0 10px;
+    @media all and (max-width:768px) {
+        width: 100%;    
+        }
 `;
 
 const FlagContainer = styled.div`
@@ -369,7 +374,9 @@ const LectureContainer =styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    
+    @media all and (max-width:768px) {
+        width: 100%;    
+        }
 `;
 
 const Headline =styled.h2`
@@ -481,6 +488,13 @@ const ToggleContainer =styled.div``;
 
 const ClassContainer =styled.div`
     border-bottom: 1px solid #c3c3c3;
+    @media all and (max-width:768px) {
+        width: 50%;
+        border-bottom: none;
+        margin-left: 35px;
+        border-right: 1px solid #c3c3c3;
+        padding-right:15px;
+    }
 `;
 
 const Classmates =styled.div`
@@ -488,6 +502,10 @@ const Classmates =styled.div`
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    @media all and (max-width:768px) {
+        width: 100%;
+        
+    }
 `;
 
 const StudentImage =styled.div`
@@ -498,6 +516,10 @@ const StudentImage =styled.div`
     width: 40%;
     @media all and (max-width:980px) {
         width: 50%;
+    }
+    @media all and (max-width:768px) {
+        margin-right: 10px;
+        width: 35%;
     }
 
 `;
@@ -528,10 +550,20 @@ const StudentDob =styled.small`
     @media all and (max-width:980px) {
         display: none;
     }
+    @media all and (max-width:768px) {
+        display: flex;
+    }
 `;
 
 const BottomContainer =styled.div`
     padding: 30px 20px;
+    @media all and (max-width:768px) {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 60px;
+    }
 `;
 
 const BottomBox =styled.div`
