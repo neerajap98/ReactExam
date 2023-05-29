@@ -324,6 +324,10 @@ const TopBar = styled.div`
     @media all and (max-width:768px) {
         width: 100%;    
         }
+    @media all and (max-width:480px) {
+        width: 100%;  
+        margin-right: 5px;  
+        }
 `;
 
 const FlagContainer = styled.div`
@@ -421,6 +425,9 @@ const SubjectContainer =styled.div`
     margin-right: 10px;
     @media all and (max-width:768px) {
         margin-left: -50px;
+    }
+    @media all and (max-width:768px) {
+        margin-left: 0px;
     }
 `;
 
