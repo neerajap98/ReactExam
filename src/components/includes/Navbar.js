@@ -177,7 +177,7 @@ const toggleMenu = () => {
                 </Items>
             </ItemContainer>
             <ItemContainer className="ham">
-                <Items>
+                <Items className='ham'>
                     <ItemImage
                         src={ham}
                         alt="profile"
@@ -361,9 +361,9 @@ const ItemContainer = styled.ul`
         &.mobile-menu {
             display: block;
             position: fixed;
-            top: 20px;
+            top: 0px;
             right: 0px;
-            background: #fff;
+            background: linear-gradient(to top, #8dadff, #fff);
             padding: 30px;
             height: 100vh;
             z-index: 2;
@@ -379,18 +379,30 @@ const Items = styled.li`
     flex-direction: column;
     @media all and (max-width:768px) {
        margin-top: -50px;
+    }
+    @media all and (max-width:480px) {
+       margin-top: 40px;
+       &:first-child {
+            margin-top: 200px;
+       }
+       margin-right: -10px;
+       &.ham {
+        margin-top: 100px;
+       }
        
     }
-    
 `;
 
 const ItemImage = styled.img`
     display: block;
     margin-right: 20px;
     @media all and (max-width:768px) {
-        margin-right: 10;
+        margin-right: 10px;
     }
-    
+    @media all and (max-width:480px) {
+       margin-right: 20px;
+       margin-top: -155px;
+    }
 `;
 
 const StorageContainer = styled.div`
