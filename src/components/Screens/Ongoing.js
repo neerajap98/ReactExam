@@ -262,7 +262,7 @@ function Ongoing() {
                     </BusinessContainer>
                     <RightDiv>
                         <Percent>65</Percent>
-                        <RightArrow>
+                        <RightArrow className='white' >
                             <RightArrowImg 
                                 src = {White}
                                 alt = 'right'
@@ -288,7 +288,7 @@ function Ongoing() {
                     </BusinessContainer>
                     <RightDiv>
                         <Percent>65</Percent>
-                        <RightArrow>
+                        <RightArrow className='white'>
                             <RightArrowImg 
                                 src = {White}
                                 alt = 'right'
@@ -374,6 +374,7 @@ const Image = styled.img`
     @media all and (max-width: 480px) {
         width: 40px;
     }
+    
 `;
 
 const Title = styled.h3`
@@ -572,6 +573,9 @@ const LeftContainer = styled.div`
     @media all and (max-width:480px) {
         width: 50px;
     }
+    @media all and (max-width:360px) {
+        width: 30px;
+    }
 `;
 
 const Time = styled.ul``;
@@ -583,6 +587,9 @@ const TimeSchedules = styled.li`
     font-size: 14px;
     font-weight: bold;
     color: #a0a4a7;
+    @media all and (max-width:360px) {
+        font-size: 12px;
+    }
     &.bar {
         display: flex;
         justify-content: flex-start;
@@ -596,7 +603,6 @@ const Circle = styled.div`
     height: 10px;
     background: #6366e7;
     border-radius: 50%;
-    
 `;
 
 const Horizontal = styled.div`
@@ -606,6 +612,9 @@ const Horizontal = styled.div`
     margin-left: -1px;
     @media all and (max-width:480px) {
         width: 20px;
+    }
+    @media all and (max-width:360px) {
+        width: 10px;
     }
 `;
 
@@ -664,7 +673,9 @@ const TopDiv = styled.div`
     @media all and (max-width:768px) {
         padding: 15px;
     }
-    
+    @media all and (max-width:480px) {
+        padding: 10px;
+    }
 `;
 
 const LeftDiv = styled.div`
@@ -695,6 +706,9 @@ const ImgTag = styled.img`
     @media all and (max-width:480px) {
         margin-right: 10px;
     }
+    @media all and (max-width: 360px) {
+    display: none;    
+    }
 `;
 
 const BusinessContainer = styled.div`
@@ -702,6 +716,10 @@ const BusinessContainer = styled.div`
     margin: auto 0;
     @media all and (max-width:480px) {
         width: 60%;
+    }
+    @media all and (max-width:360px) {
+        width: 70%;
+        text-align: center;
     }
 `;
 
@@ -714,6 +732,9 @@ const TimePer = styled.small`
     }
     @media all and (max-width:768px) {
         font-size: 12px;
+    }
+    @media all and (max-width:360px) {
+        font-size: 10px;
     }
     &.white {
         color: #fff;
@@ -730,6 +751,9 @@ const Sub = styled.h3`
     }
     @media all and (max-width:980px) {
         font-size: 16px;
+    }
+    @media all and (max-width:360px) {
+        font-size: 14px;
     }
     &.white {
         color: #fff;
@@ -760,7 +784,10 @@ const RightDiv = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    @media all and (max-width:360px) {
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 const Percent = styled.h6`
@@ -779,15 +806,34 @@ const Percent = styled.h6`
         padding: 12px 20px;
         
     }
+    @media all and (max-width:360px) {
+        display: none;
+    }
+
+
 `;
 
 const RightArrow = styled.div`
     margin: 0 0 20px 20px;
-    
+    @media all and (max-width:360px) {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        &.white {
+            background:#000;
+        }
+    }
+
 `;
 
 const RightArrowImg = styled.img`
     display: block;
+    
 `;
 
 const MeetingContainer = styled.div`

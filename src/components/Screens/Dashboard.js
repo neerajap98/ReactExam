@@ -121,6 +121,10 @@ const SubHeading = styled.h3`
     font-weight: 600;
     color: #bababc;
     margin-right: 12px;
+    @media all and (max-width:360px) {
+        font-size: 12px;
+        width: 70%;
+    }
 `;
 
 const HeadLogo = styled.div`
@@ -130,10 +134,18 @@ const HeadLogo = styled.div`
     justify-content: center;
     height: 32px;
     width: 32px;
+    @media all and (max-width:360px) {
+        margin-right: 55px;
+        height: 25px;
+        width: 25px;
+    }
 `;
 
 const BookIcon = styled.img`
     display: block;
+    @media all and (max-width:360px) {
+        width: 24px;
+    }
 `;
 
 const ArrowContainer = styled.div`
