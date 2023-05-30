@@ -9,12 +9,17 @@ import Transaction from '../../assets/transactionactive.svg';
 import Settings from '../../assets/settingsactive.svg';
 import Support from '../../assets/supportactive.svg';
 import Logout from '../../assets/logoutactive.svg';
-import File from '../../assets/file.svg'
-import { Link, NavLink } from 'react-router-dom';
+import File from '../../assets/file.svg';
+import ham from '../../assets/hamburger.png'
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
 
 const [isMobile, setIsMobile] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
+const toggleMenu = () => {
+    setIsOpen(!isOpen);
+};
 
     return (
         <MainContainer>
@@ -33,7 +38,7 @@ const [isMobile, setIsMobile] = useState(false);
                     width={"15px"}/>
                 <ButtonTitle>Become a pro</ButtonTitle>
             </ButtonContainer>
-            <ItemContainer>
+            <ItemContainer className={isMobile ? "mobile-menu" : ""}>
                 <Items>
                     <NavLink
                         className={({ isActive}) => 
@@ -42,7 +47,11 @@ const [isMobile, setIsMobile] = useState(false);
                         to="profile">
                         <ItemImage src= {Profile1} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px'
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Profile
                     </NavLink>
                 </Items> 
@@ -52,9 +61,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="/">
-                        <ItemImage src= {Dashboard1} 
+                        <ItemImage 
+                            src= {Dashboard1} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}       
+                            />
                         Dashboard
                     </NavLink>
                 </Items>  
@@ -64,9 +78,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="statistics">
-                        <ItemImage src= {Statistics} 
+                        <ItemImage 
+                            src= {Statistics} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Statistics
                     </NavLink>
                 </Items>
@@ -76,9 +95,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="payment">
-                        <ItemImage src= {Payment} 
+                        <ItemImage 
+                            src= {Payment} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Payment
                     </NavLink>
                 </Items> 
@@ -88,9 +112,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="transaction">
-                        <ItemImage src= {Transaction} 
+                        <ItemImage 
+                            src= {Transaction} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                        Transaction
                     </NavLink>
                 </Items> 
@@ -100,9 +129,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="settings">
-                        <ItemImage src= {Settings} 
+                        <ItemImage 
+                            src= {Settings} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Settings
                     </NavLink>
                 </Items> 
@@ -112,9 +146,14 @@ const [isMobile, setIsMobile] = useState(false);
                         isActive ? "active" : ""
                     }
                         to="support">
-                        <ItemImage src= {Support} 
+                        <ItemImage 
+                            src= {Support} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Support
                     </NavLink>
                 </Items>
@@ -125,11 +164,28 @@ const [isMobile, setIsMobile] = useState(false);
                     }
                         to="logout"
                         >
-                        <ItemImage src= {Logout} 
+                        <ItemImage 
+                            src= {Logout} 
                             alt='profile' 
-                            width='20px' />
+                            width='20px' 
+                            onClick={() => {
+                                setIsMobile(false)
+                            }}
+                            />
                         Logout
                     </NavLink>
+                </Items>
+            </ItemContainer>
+            <ItemContainer className="ham">
+                <Items>
+                    <ItemImage
+                        src={ham}
+                        alt="profile"
+                        width="20px"
+                        onClick={() => {
+                            setIsMobile(!isMobile);
+                        }}
+                    />
                 </Items>
             </ItemContainer>
             <StorageContainer>
@@ -140,7 +196,6 @@ const [isMobile, setIsMobile] = useState(false);
                 <Storage>Buy More Storage</Storage>
                 <BuyButton>Buy Now</BuyButton>
             </StorageContainer>
-
         </MainContainer>           
     )
 }
@@ -166,6 +221,14 @@ const MainContainer = styled.div`
         align-items: center;
         flex-direction: column;
     }
+    @media all and (max-width:480px) {
+        width: 100%;
+        height: 110px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
 `;
 
 const ProfileContainer = styled.div`
@@ -175,11 +238,13 @@ const ProfileContainer = styled.div`
     @media all and (max-width:768px) {
         margin-left: -20px;
         width: 70px;
-    }
-    @media all and (max-width:768px) {
-        margin-left: -20px;
-        width: 70px;
         margin-top: -30px;
+    }
+    @media all and (max-width: 480px) {
+        margin: 0 0;
+        width: 40px;
+        align-items: center;
+        margin-bottom: 15px;
     }
 `;
 
@@ -188,17 +253,15 @@ const Profile = styled.img`
     display: block;
     border-radius: 50%;
     margin-left: 20px;
+    @media all and (max-width: 480px) {
+        margin: 0 0;
+    }
 `;
 
 const NameContainer = styled.div`
     @media all and (max-width:768px) {
-        margin-left:30px;
-        margin-top: -320px;
-        width: 100%;
         display: none;
     }
-    
-    
 `;
 
 const PersonName = styled.h6`
@@ -243,6 +306,7 @@ const HorseImage = styled.img`
         margin-right: 3px;
     }
 `;
+
 const ButtonTitle = styled.small`
     color: #fff;
     font-size: 12px;
@@ -256,18 +320,20 @@ const ItemContainer = styled.ul`
     flex-direction: column;
     margin-left: 10px;
     margin-bottom: 10px;
+    &.ham {
+        display: none;
+    }
     
     &.mobile-menu {
         position: fixed;
         top: 0;
-        right: -280px;
+        right: -900px;
         background: #fff;
         padding: 30px;
+        height: 100vh;
         z-index: 2;
-        bottom: 0;
-        width: 280px;
-        padding-top: 40px;
-        transition: all 0.4s ease-in;
+        transition: transform 0.3s ease-out; 
+        transform: translateX(-200px);
     }
     @media all and (max-width:768px) {
        display: flex;
@@ -286,7 +352,25 @@ const ItemContainer = styled.ul`
         margin-left: 300px;
     }
     @media all and (max-width:480px) {
-        margin-left: 100px;
+        display: none;
+        &.ham {
+            display: block;
+            margin-left: 0px;
+            margin-bottom: -90px;
+        }
+        &.mobile-menu {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 0px;
+            background: #fff;
+            padding: 30px;
+            height: 100vh;
+            z-index: 2;
+            transition: all 0.4s ease-in;
+            transition: transform 0.3s ease-out; 
+            transform: translateX(0px);
+        }
     }
 `;
 
@@ -294,10 +378,10 @@ const Items = styled.li`
     display: flex;
     flex-direction: column;
     @media all and (max-width:768px) {
-       display: flex;
-       flex-direction: column;
        margin-top: -50px;
+       
     }
+    
 `;
 
 const ItemImage = styled.img`
@@ -306,6 +390,7 @@ const ItemImage = styled.img`
     @media all and (max-width:768px) {
         margin-right: 10;
     }
+    
 `;
 
 const StorageContainer = styled.div`
@@ -357,6 +442,3 @@ const BuyButton = styled.button`
     } 
 `;
 
-const HamImg = styled.img`
-    width: 100%;
-`;
